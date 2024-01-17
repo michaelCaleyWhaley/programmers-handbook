@@ -10,5 +10,5 @@ keywords
 - scalability
 
 
-Bookmark: https://www.frontendinterviewhandbook.com/javascript-questions#what-is-use-strict-what-are-the-advantages-and-disadvantages-to-using-it
+Bookmark: https://www.frontendinterviewhandbook.com/css-questions/
 
