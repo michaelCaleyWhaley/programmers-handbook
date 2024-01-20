@@ -10,5 +10,5 @@ keywords
 - scalability
 
 
-Bookmark: https://www.frontendinterviewhandbook.com/css-questions#have-you-ever-used-a-grid-system-and-if-so-what-do-you-prefer
+Bookmark: https://www.frontendinterviewhandbook.com/coding/javascript-utility-function/
 
