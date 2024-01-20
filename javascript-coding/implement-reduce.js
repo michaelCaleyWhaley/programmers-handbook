@@ -13,9 +13,9 @@ Array.prototype.reduce = function (cb, initialValue) {
   return accumulator;
 };
 
-const mapOutput = [1, 2, 3].reduce((accumulator, currentValue) => {
+const reduceOutput = [1, 2, 3].reduce((accumulator, currentValue) => {
   if (currentValue === 2) return accumulator;
   return accumulator + currentValue;
 }, 0);
 
-console.log("mapOutput: ", mapOutput);
+console.log("reduceOutput: ", reduceOutput);
