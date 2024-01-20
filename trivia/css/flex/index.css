@@ -33,27 +33,27 @@ body {
 
 .coder__link {
   margin-bottom: 2px;
+}
 
-  a {
-    position: relative;
-    color: inherit;
-    text-decoration: none;
-  }
+a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+}
 
-  a:after {
-    position: absolute;
-    content: "";
-    bottom: 0;
-    left: 0;
-    width: 0;
-    opacity: 0;
-    background-color: white;
-    height: 1px;
-    transition: opacity 0.3s linear, width 0.3s linear;
-  }
+a:after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 0;
+  opacity: 0;
+  background-color: white;
+  height: 1px;
+  transition: opacity 0.3s linear, width 0.3s linear;
+}
 
-  a:hover:after {
-    opacity: 1;
-    width: 100%;
-  }
+a:hover:after {
+  opacity: 1;
+  width: 100%;
 }
