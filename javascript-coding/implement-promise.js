@@ -54,7 +54,7 @@ new MyPromise((resolve) => {
     resolve(100);
   }, 100);
 
-  // throw new Error("test error");
+  throw new Error("test error");
 })
   .then((value) => {
     return value;
@@ -64,7 +64,7 @@ new MyPromise((resolve) => {
   })
   .then((value3) => {
     console.log("value3: ", value3);
-  })
-  .catch((error) => {
-    console.log("ERROR: ", error);
   });
+// .catch((error) => {
+//   console.log("ERROR: ", error);
+// });
