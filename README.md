@@ -10,5 +10,5 @@ keywords
 - scalability
 
 
-Bookmark: https://www.frontendinterviewhandbook.com/coding/javascript-utility-function/
+Bookmark: https://www.frontendinterviewhandbook.com/coding/build-front-end-user-interfaces/
 

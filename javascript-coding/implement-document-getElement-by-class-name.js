@@ -3,21 +3,21 @@
 document.getElementsByClassName = function (className) {
   const elementsWithClass = [];
 
-  //   if (this.body.classList.contains(className)) {
-  //     elementsWithClass.push(this.body);
-  //   }
-
   function checkForClassName(eleList) {
     for (const currentEle of eleList) {
-      if (currentEle.classList.contains(className)) {
+      if (currentEle?.classList?.contains?.(className)) {
         elementsWithClass.push(currentEle);
+      }
+
+      if (currentEle.childNodes) {
+        checkForClassName(currentEle.childNodes);
       }
     }
   }
 
-  checkForClassName([element]);
+  checkForClassName([this.body]);
 
   return elementsWithClass;
 };
 
-document.getElementsByClassName();
+document.getElementsByClassName("question-page");

@@ -37,3 +37,5 @@ const testObject = {
 
 convertObjToCamelCase(testObject);
 console.log("testObject: ", testObject);
+
+'{"ps_games":{"metal_gear_solid":{"play":1},"crash_bandicoot":{"play":1},"soul_calibur":{"play":1},"star_wars":{"play":1,"characters":[{"name":"han solo","super_power":"blaster"}]}}}'
