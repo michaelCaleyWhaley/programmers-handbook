@@ -1,6 +1,7 @@
 class MyPromise {
-  constructor(successCallback) {
+  constructor(promiseCallback) {
     this.successCallbacks = [];
+    this.catchCallbacks = [];
     this.state = "pending";
     this.value = undefined;
 
@@ -12,14 +13,36 @@ class MyPromise {
       });
     };
 
-    successCallback(resolve);
+    const reject = (value) => {
+      this.state = "rejected";
+      this.value = value;
+      this.catchCallbacks.forEach((cb) => {
+        this.value = cb(this.value);
+      });
+    };
+
+    try {
+      promiseCallback(resolve);
+    } catch (e) {
+      reject(e);
+    }
   }
 
   then(thenCallback) {
     if (this.state === "pending") {
       this.successCallbacks.push(thenCallback);
-    } else {
+    } else if (this.state === "fullfilled") {
       this.value = thenCallback(this.value);
+    }
+
+    return this;
+  }
+
+  catch(catchCallback) {
+    if (this.state === "pending") {
+      this.catchCallbacks.push(catchCallback);
+    } else if (this.state === "rejected") {
+      this.value = catchCallback(this.value);
     }
 
     return this;
@@ -30,6 +53,8 @@ new MyPromise((resolve) => {
   setTimeout(() => {
     resolve(100);
   }, 100);
+
+  // throw new Error("test error");
 })
   .then((value) => {
     return value;
@@ -39,4 +64,7 @@ new MyPromise((resolve) => {
   })
   .then((value3) => {
     console.log("value3: ", value3);
+  })
+  .catch((error) => {
+    console.log("ERROR: ", error);
   });
