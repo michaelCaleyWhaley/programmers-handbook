@@ -4,7 +4,7 @@ import classnames from "classnames";
 
 // Notes for improving after MVP
 // add state to local storage so position is remembered when closing reopening
-// 
+//
 
 const tabableContent = [
   { button: "btn1", text: "First tab" },
@@ -19,7 +19,7 @@ function App() {
     <>
       <ul className="btn-list">
         {tabableContent.map(({ button }, index) => (
-          <li>
+          <li key={`btn-${index}`}>
             <button
               className={classnames("btn-list__btn", {
                 "btn-active": index === activeTab,
@@ -37,6 +37,7 @@ function App() {
       <ul className="content-list">
         {tabableContent.map(({ text }, index) => (
           <li
+            key={`ctn-${index}`}
             className={classnames("content-list__content", {
               active: index === activeTab,
             })}
