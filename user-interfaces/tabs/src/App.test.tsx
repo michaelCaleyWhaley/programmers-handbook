@@ -17,6 +17,8 @@ describe("Tab component", () => {
 
     it("should display second tab content", () => {
       const secondTabEle = getByText("Second tab");
+      console.log("secondTabEle: ", secondTabEle.after);
+
       expect(secondTabEle.parentElement).toHaveClass("active");
 
       const thirdTabEle = getByText("Third tab");
