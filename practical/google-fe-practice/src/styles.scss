@@ -1,0 +1,30 @@
+#app {
+  display: flex;
+  justify-content: space-between;
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.status {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  border: 1px solid black;
+}
+
+.CORRECT {
+  background-color: green;
+}
+
+.PARTIALLY_CORRECT {
+  background-color: orange;
+}
+
+.INCORRECT {
+  background-color: red;
+}
