@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "start": "deno run --allow-all main.ts"
+  },
+  "compilerOptions": { "noImplicitReturns": false },
+  "imports": {
+    "@typescript-eslint/eslint-plugin": "npm:@typescript-eslint/eslint-plugin@^8.11.0"
+  }
+}
