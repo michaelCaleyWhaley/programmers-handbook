@@ -1,0 +1,5 @@
+{
+  "invalidInput": "Invalid input. Enter a URL in this format URL=https://www.example.com .",
+  "emptyElement": "The element was either not on the page or empty.",
+  "success": "Successfully scraped URL. See output at ./output.txt."
+}
