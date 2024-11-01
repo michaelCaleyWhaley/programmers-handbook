@@ -4,7 +4,7 @@ Repository hosting useful documentation and practice implementations.
 
 ## Roadmap
 
-- [Developer roadmap](https://roadmap.sh)
+Following the [developer roadmap](https://roadmap.sh) I have created a record of my progress under the `roadmap` folder [code examples](./roadmap)
 
 ## front-end-handbook
 
