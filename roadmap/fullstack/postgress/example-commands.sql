@@ -1,3 +1,6 @@
+-- CREATE A DATABASE
+CREATE DATABASE test;
+
 -- CREATE A TABLE
 CREATE TABLE person(
     id BIGSERIAL NOT NULL PRIMARY KEY,
@@ -29,4 +32,13 @@ INSERT INTO
         email
     )
 VALUES
-    ('Michael', 'Caley', 'MALE', DATE '1988-12-12', 'kneedeep');
+    (
+        'Michael',
+        'Caley',
+        'MALE',
+        DATE '1988-12-12',
+        'kneedeep'
+    );
+
+-- PRINT ALL ROWS IN TABLE
+SELECT * FROM person;
