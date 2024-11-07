@@ -5,6 +5,9 @@
 - print list of docker images `docker image ls`
 - print list of docker containers `docker container ls`
 
+### Docker on windows
+- In order for docker to run you must enable virtualisation.
+
 ### Run the container
 - `docker run --rm --name pgsql-dev -e POSTGRES_PASSWORD=test1234 -p 5432:5432 postgres`
     - –name: the name of the PostgreSQL container.
