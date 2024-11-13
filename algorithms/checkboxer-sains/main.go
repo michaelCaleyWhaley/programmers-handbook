@@ -6,37 +6,52 @@ import (
 )
 
 func numToLetter(num int64) string { return string('a' - 1 + num) }
-func letterToNum(letter rune) int {
-	return int(letter - 'a' + 1)
+
+func letterToNum(letter rune) int64 {
+	return int64(int(letter - 'a' + 1))
 }
 
-func calculateMove(startingPos int, moves int64) int64 {
-	return int64(startingPos) + (moves % 8)
+func stringToInt64(stringVar string) int64 {
+	intVar, _ := strconv.Atoi(stringVar)
+	return int64(intVar)
 }
 
-func findPos(startPos string, rowMoves int64, colMoves int64) string {
-	rowStartPos, _ := strconv.Atoi(startPos[0:1])
-	finalRowPos := calculateMove(rowStartPos, rowMoves)
+func calcMoves(start int64, moves int64) int64 {
+	finalTotal := start + moves
 
-	colStartPos := letterToNum([]rune(startPos[1:2])[0])
-	movedColPos := calculateMove(colStartPos, colMoves)
-	colLetter := numToLetter(movedColPos % 8)
+	if (finalTotal) <= 8 {
+		return finalTotal
+	}
+	normalisedMoves := moves % 8
+	if start+normalisedMoves <= 8 {
+		return start + normalisedMoves
+	}
+	return (start + normalisedMoves) % 8
+}
 
-	return fmt.Sprintf("%d%s", finalRowPos, colLetter)
+func FindPos(startPos string, rowMoves int64, colMoves int64) string {
+	startRowPos := stringToInt64(startPos[0:1])
+	finalRowPos := calcMoves(startRowPos, rowMoves)
+
+	startColPos := letterToNum([]rune(startPos[1:2])[0])
+	finalColPos := calcMoves(startColPos, colMoves)
+
+	return fmt.Sprintf("%d%s", finalRowPos, numToLetter(finalColPos))
 }
 
 func main() {
-	exampleOne := findPos("2b", 3, 2)
+
+	exampleOne := FindPos("5h", 11, 25)
 	fmt.Println("exampleOne", exampleOne)
-	// expected output 5d
+	// expected outcome 8a
 
-	exampleTwo := findPos("5h", 11, 25)
+	exampleTwo := FindPos("5h", 12, 25)
 	fmt.Println("exampleTwo", exampleTwo)
-	// expected output 8a
+	// expected outcome 1a
 
-	exampleThree := findPos("6h", 11, 25)
+	exampleThree := FindPos("5h", 25, 9)
 	fmt.Println("exampleThree", exampleThree)
-	// expected output 3a
+	// expected outcome 6a
 }
 
 //   a b c d e f g h
