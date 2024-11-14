@@ -42,3 +42,18 @@ VALUES
 
 -- PRINT ALL ROWS IN TABLE
 SELECT * FROM person;
+
+-- PRINT INDIVIDUAL COLUMN
+SELECT first_name FROM person;
+
+-- PRINT TWO COLUMNS
+SELECT first_name, last_name FROM person;
+
+-- ORDER BY COLUMN ASC
+SELECT first_name, last_name FROM person ORDER BY last_name ASC;
+
+-- ORDER BY COLUMN DESC
+SELECT first_name, last_name FROM person ORDER BY last_name DESC;
+
+-- Remove duplicates from the results
+SELECT DISTINCT first_name FROM person;
