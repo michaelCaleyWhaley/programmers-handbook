@@ -93,3 +93,50 @@ SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth ORDER BY
 
 -- HAVING FILTER FOR GROUP BY
 SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth HAVING COUNT(*) >= 40 ORDER BY country_of_birth ASC;
+
+-- /////////////////////////////////////
+-- CARS DATASET
+-- /////////////////////////////////////
+
+-- Return the highest price car
+SELECT MAX(price) FROM car;
+
+-- Return the minimum price car
+SELECT MIN(price) FROM car;
+
+-- Average from car
+SELECT ROUND(AVG(price)) FROM car;
+
+-- Return highest prices for each make and groups by make
+SELECT make, MAX(price) from car GROUP BY make ORDER BY make;
+
+-- Return lowest prices for each make/model and groups by make/model
+SELECT make, model, MIN(price) from car GROUP BY make, model ORDER BY make;
+
+-- Sum all prices
+SELECT SUM(price) FROM car;
+
+-- Sum all prices where make is Audi
+SELECT SUM(price) FROM car WHERE make LIKE 'Audi';
+
+-- Sums the combined price of price of make and model
+SELECT make, model, SUM(price) FROM car GROUP BY make;
+
+-- you can do calculations in SQL
+-- 2 to the power 10
+SELECT 2^10;
+
+-- Factorial of 4
+SELECT FACTORIAL(5);
+
+-- Modulus
+SELECT 3 % 10;
+
+-- Find 10% of original price
+SELECT make, model, price, ROUND(SUM(price * 0.1),2) AS "Discount" FROM car GROUP BY make, model, price;
+
+-- Show discounted price
+SELECT make, model, price, ROUND(SUM(price * 0.1),2) AS "Discount", ROUND(SUM(price * 0.9),2) AS "Discounted price" FROM car GROUP BY make, model, price;
+
+-- Use the COALESCE replace empty values with default
+SELECT COALESCE(email, 'Email not provided') FROM person; 
