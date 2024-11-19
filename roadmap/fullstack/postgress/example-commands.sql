@@ -140,3 +140,42 @@ SELECT make, model, price, ROUND(SUM(price * 0.1),2) AS "Discount", ROUND(SUM(pr
 
 -- Use the COALESCE replace empty values with default
 SELECT COALESCE(email, 'Email not provided') FROM person; 
+
+-- Handle division by zero with COALESCE
+SELECT COALESCE(10 / NULLIF(0,0),0);
+
+-------------------------------------------- DATES
+
+-- Get todays date and time
+SELECT NOW();
+
+-- To get date without time
+SELECT NOW()::DATE;
+
+-- Get todays date minus 1 year
+SELECT NOW() - INTERVAL '1 YEAR';
+
+-- Get todays date minus 10 months
+SELECT NOW() - INTERVAL '1 MONTHS';
+
+-- To extract the year from the date
+SELECT EXTRACT(YEAR FROM NOW());
+
+-- To extract the day from the date
+SELECT EXTRACT(DAY FROM NOW());
+
+-------------------------------------------- AGE
+
+-- Dynamically calculate a persons age using AGE func
+SELECT first_name, last_name, gender, country_of_birth, date_of_birth, AGE(NOW(),date_of_birth) FROM person;
+
+-------------------------------------------- ALTERING TABLE
+
+-- Alter person table to not have primary key constraint
+ALTER TABLE person DROP CONSTRAINT person_pkey;
+
+-- Alter person table to re add the primary key constraint
+ALTER TABLE person ADD PRIMARY KEY (id);
+
+-- DELETE an entry in a table
+DELETE FROM person WHERE id = 1;
