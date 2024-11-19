@@ -179,3 +179,18 @@ ALTER TABLE person ADD PRIMARY KEY (id);
 
 -- DELETE an entry in a table
 DELETE FROM person WHERE id = 1;
+
+-------------------------------------------- 
+
+-- Adding CONTRAINT to field
+-- SELECT email, count(*) FROM person GROUP BY email;
+ALTER TABLE person ADD CONSTRAINT unique_email_address UNIQUE (email);
+
+-- List all unique values of column 
+SELECT DISTINCT first_name FROM person;
+
+-- Add enum CONSTRAINT to column
+-- First remove conflicting entries
+DELETE FROM person WHERE gender != 'Female' AND gender != 'Male';
+-- Add constraint
+ALTER TABLE person ADD CONSTRAINT gender_constraint CHECK (gender = 'Female' OR gender = 'Male');
