@@ -180,7 +180,7 @@ ALTER TABLE person ADD PRIMARY KEY (id);
 -- DELETE an entry in a table
 DELETE FROM person WHERE id = 1;
 
--------------------------------------------- 
+-------------------------------------------- CONSTRAINT
 
 -- Adding CONTRAINT to field
 -- SELECT email, count(*) FROM person GROUP BY email;
@@ -194,3 +194,17 @@ SELECT DISTINCT first_name FROM person;
 DELETE FROM person WHERE gender != 'Female' AND gender != 'Male';
 -- Add constraint
 ALTER TABLE person ADD CONSTRAINT gender_constraint CHECK (gender = 'Female' OR gender = 'Male');
+
+-------------------------------------------- DELETE
+
+DELETE FROM person WHERE first_name = 'Ware';
+
+-------------------------------------------- UPDATE
+
+-- Update email address of person with ID 3 
+UPDATE person SET email = 'judgedredd@email.com' WHERE id = 3;
+SELECT * FROM person WHERE id = 3;
+
+-- ON CONFLICT
+-- https://www.postgresql.org/docs/current/sql-insert.html
+-- When a conflict occurs specify a behaviour i.e. DO NOTHING
