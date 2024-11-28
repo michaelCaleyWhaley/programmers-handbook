@@ -4,3 +4,6 @@
 * go lang backend
 
 https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app
+
+
+https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps
