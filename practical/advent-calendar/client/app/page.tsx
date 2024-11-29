@@ -1,9 +1,10 @@
 "use client";
 
+import { ghSignInUrl } from "@/lib/github/urls";
 import styles from "./page.module.scss";
 import { GITHUB_CLIENT_ID } from "@/constants/o-auth";
 
-const gitHubSignInUrl = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}`;
+const gitHubSignInUrl = `${ghSignInUrl}?client_id=${GITHUB_CLIENT_ID}`;
 
 export default function Home() {
   return (
