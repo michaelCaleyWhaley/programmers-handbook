@@ -1,6 +1,9 @@
 npm/install:
 	npm ci
 
+lint/application:
+	npm run lint
+
 build/application:
 	npm run build
 
