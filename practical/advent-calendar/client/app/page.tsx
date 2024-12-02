@@ -1,7 +1,7 @@
 "use client";
 
 import { ghSignInUrl } from "@/lib/github/urls";
-import styles from "./page.module.scss";
+import styles from "./styles.module.scss";
 import { GITHUB_CLIENT_ID } from "@/constants/o-auth";
 
 const gitHubSignInUrl = `${ghSignInUrl}?client_id=${GITHUB_CLIENT_ID}`;

@@ -12,3 +12,4 @@ https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth
 * deploy go to lambda
 * config for oauth local and deployed
 * display user details on website
+* only return elapsed days doors after auth
