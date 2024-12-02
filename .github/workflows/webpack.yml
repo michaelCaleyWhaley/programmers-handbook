@@ -7,6 +7,7 @@ env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_DEFAULT_REGION: "eu-west-2"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,6 +27,11 @@ jobs:
  ###########################################################################
       ############### Client
       ###########################################################################
+
+    - name: test
+      id: test
+      run: echo "$AWS_DEFAULT_REGION"
+
     - name: install
       id: install
       working-directory: ./practical/advent-calendar/client
