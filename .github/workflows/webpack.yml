@@ -1,5 +1,4 @@
 name: advent-calendar
-
 on:
   push:
     branches: [ "advent-calendar" ]
