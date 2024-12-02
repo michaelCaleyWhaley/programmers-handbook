@@ -28,11 +28,6 @@ jobs:
  ###########################################################################
       ############### Client
       ###########################################################################
-
-    - name: test
-      id: test
-      run: echo "$AWS_ACCESS_KEY_ID"
-
     - name: install
       id: install
       working-directory: ./practical/advent-calendar/client
@@ -68,11 +63,11 @@ jobs:
       run: make s3/clean
       continue-on-error: false
 
-    # - name: sync html files
-    #   id: synchtml
-    #   working-directory: ./practical/advent-calendar/client
-    #   run: make s3/push/html
-    #   continue-on-error: false
+    - name: sync html files
+      id: synchtml
+      working-directory: ./practical/advent-calendar/client
+      run: make s3/push/html
+      continue-on-error: false
 
     # - name: sync remaining files
     #   id: syncremaining
