@@ -11,8 +11,7 @@ jobs:
     strategy:
       matrix:
         node-version: [20.x]
-    env: 
-      client-path: ./practical/advent-calendar/client
+    
     steps:
     - uses: actions/checkout@v4
 
@@ -26,13 +25,13 @@ jobs:
       ###########################################################################
     - name: install
       id: install
-      working-directory: "$client-path"
+      working-directory: ./practical/advent-calendar/client
       run: make npm/install
       continue-on-error: false
 
     - name: lint
       id: lint
-      working-directory: "$client-path"
+      working-directory: ./practical/advent-calendar/client
       run: make lint/application
       continue-on-error: false
 
@@ -43,36 +42,36 @@ jobs:
 
     - name: build
       id: build
-      working-directory: "$client-path"
+      working-directory: ./practical/advent-calendar/client
       run: make build/application
       continue-on-error: false
 
     - name: rewrite
       id: rewrite
-      working-directory: "$client-path"
+      working-directory: ./practical/advent-calendar/client
       run: make rewrite/extension
       continue-on-error: false
 
     # - name: clear s3
     #   id: clear
-    #   working-directory: "$client-path"
+    #   working-directory: ./practical/advent-calendar/client
     #   run: make s3/clean
     #   continue-on-error: false
 
     # - name: sync html files
     #   id: synchtml
-    #   working-directory: "$client-path"
+    #   working-directory: ./practical/advent-calendar/client
     #   run: make s3/push/html
     #   continue-on-error: false
 
     # - name: sync remaining files
     #   id: syncremaining
-    #   working-directory: "$client-path"
+    #   working-directory: ./practical/advent-calendar/client
     #   run: make s3/push/remaining
     #   continue-on-error: false
 
     # - name: refresh cloudfront
     #   id: cloudfront
-    #   working-directory: "$client-path"
+    #   working-directory: ./practical/advent-calendar/client
     #   run: make cloudfront/cache/refresh
     #   continue-on-error: false
