@@ -1,11 +1,10 @@
 {
   "extends": [
-    // "airbnb",
-    // "airbnb-typescript",
     "next/core-web-vitals",
     "next/typescript",
     "plugin:prettier/recommended",
     "plugin:@typescript-eslint/strict-type-checked"
   ],
-  "parserOptions": { "project": true }
+  "parserOptions": { "project": true },
+  "ignorePatterns": ["**/deployment/*.js", "**/vendor/*.js"]
 }
