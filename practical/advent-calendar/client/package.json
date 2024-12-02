@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NEXT_PUBLIC_ENV=dev next dev",
-    "build": "cross-env NEXT_PUBLIC_ENV=prod next build && node ./deployment/rewrite-extension.js",
+    "build": "cross-env NEXT_PUBLIC_ENV=prod next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "15.0.3",
+    "next": "14.2.5",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "sass": "^1.81.0"

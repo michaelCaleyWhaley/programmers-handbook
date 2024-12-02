@@ -69,11 +69,11 @@ jobs:
       run: make s3/push/html
       continue-on-error: false
 
-    # - name: sync remaining files
-    #   id: syncremaining
-    #   working-directory: ./practical/advent-calendar/client
-    #   run: make s3/push/remaining
-    #   continue-on-error: false
+    - name: sync remaining files
+      id: syncremaining
+      working-directory: ./practical/advent-calendar/client
+      run: make s3/push/remaining
+      continue-on-error: false
 
     # - name: refresh cloudfront
     #   id: cloudfront
