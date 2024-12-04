@@ -1,0 +1,33 @@
+.calendar-door {
+  position: relative;
+  border: dashed rgba(255, 255, 255, 0.34) 2px;
+  width: 20%;
+  padding-bottom: 20%;
+
+  //   3d door
+  perspective: 1000px;
+  transform-style: preserve-3d;
+
+  &:hover .front-door {
+    transform: rotateY(-180deg);
+  }
+}
+
+.front-door {
+  position: absolute;
+  inset: 0;
+  background-color: rgb(47, 47, 47);
+  display: flex;
+  justify-content: center;
+
+  &__text {
+    align-self: center;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+
+  //   3d door
+  transform-origin: left center;
+  transform: rotateY(0deg);
+  transition: transform 0.3s ease;
+}
