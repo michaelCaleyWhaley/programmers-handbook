@@ -85,20 +85,20 @@ jobs:
       ############### Server
       ###########################################################################
 
-    # - name: Build server binary
-    #   id: binary
-    #   working-directory: ./server
-    #   run: make server/build
-    #   continue-on-error: false
+    - name: Build server binary
+      id: binary
+      working-directory: ./practical/advent-calendar/server
+      run: make server/build
+      continue-on-error: false
 
-    # - name: Zip server binary
-    #   id: zip-binary
-    #   working-directory: ./server
-    #   run: make server/zip
-    #   continue-on-error: false
+    - name: Zip server binary
+      id: zip-binary
+      working-directory: ./practical/advent-calendar/server
+      run: make server/zip
+      continue-on-error: false
 
-    # - name: Update lambda function
-    #   id: update-lambda
-    #   working-directory: ./server
-    #   run: make aws/lambda/update/actions
-    #   continue-on-error: false
+    - name: Update lambda function
+      id: update-lambda
+      working-directory: ./practical/advent-calendar/server
+      run: make aws/lambda/update/actions
+      continue-on-error: false

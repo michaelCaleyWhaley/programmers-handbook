@@ -2,6 +2,7 @@ package controllers
 
 import (
 	constantVars "advent/constants"
+	"advent/initialisers"
 	"bytes"
 	"encoding/json"
 	"io"
@@ -51,7 +52,7 @@ func GetGhAccessToken(c *gin.Context) {
 	}
 	accessToken := parsedResBody.Get("access_token")
 
-	c.SetCookie("access_token", accessToken, 28800, "/", "localhost", false, true)
+	c.SetCookie("access_token", accessToken, 28800, "/", initialisers.GetConfig().CookieDomain, false, true)
 	c.JSON(http.StatusOK, gin.H{
 		"message": "Authorised",
 	})
