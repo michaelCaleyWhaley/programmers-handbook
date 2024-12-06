@@ -7,7 +7,8 @@ https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth
 https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps
 
 ## next steps
-* config for oauth local and deployed
+* submit code on /github-auth
+* set client cookie with same expiry
 * display user details on website
 * only return elapsed days doors after auth
 
