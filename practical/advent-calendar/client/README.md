@@ -7,8 +7,6 @@ https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth
 https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps
 
 ## next steps
-* make go server run local with air and be capable of handling lambda
-* deploy go to lambda
 * config for oauth local and deployed
 * display user details on website
 * only return elapsed days doors after auth

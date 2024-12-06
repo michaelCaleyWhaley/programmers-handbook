@@ -59,8 +59,8 @@ resource "aws_lambda_function" "advent_calendar_function" {
   lifecycle {
     ignore_changes = [
       filename,
-      environment.0.variables["CLIENT_ID"],
-      environment.0.variables["CLIENT_SECRET"],
+      environment.0.variables["GITHUB_CLIENT_ID"],
+      environment.0.variables["GITHUB_CLIENT_SECRET"],
     ]
   }
 
