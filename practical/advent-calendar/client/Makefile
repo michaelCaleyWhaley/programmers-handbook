@@ -19,5 +19,5 @@ s3/push/html:
 s3/push/remaining:
 	aws s3 sync ./out s3://advent-calendar-website --include "*.*"
 
-# cloudfront/cache/refresh:
-# 	aws cloudfront create-invalidation --distribution-id E1C5MM2ZCI8919  --paths "/*"
+cloudfront/cache/refresh:
+	aws cloudfront create-invalidation --distribution-id E1C5MM2ZCI8919  --paths "/*"
