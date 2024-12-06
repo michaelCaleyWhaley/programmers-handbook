@@ -3,11 +3,11 @@
 import { CalendarDoor } from "@/components/Calendar-Door/CalendarDoor";
 import Snowfall from "react-snowfall";
 
-// import styles from "./styles.module.scss";
+import styles from "./styles.module.scss";
 
 export default function AdventCalendar() {
   return (
-    <div className="min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <Snowfall
         color="white"
         style={{
@@ -18,10 +18,17 @@ export default function AdventCalendar() {
         }}
         snowflakeCount={100}
       />
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+      <main className={styles["main"]}>
         {new Array(25).fill(1).map((_, index) => {
           const key = `door-${index.toString()}`;
-          return <CalendarDoor key={key} number={index + 1} />;
+          return (
+            <CalendarDoor
+              className={styles["row__item"]}
+              key={key}
+              number={index + 1}
+              image="/santa_island.webp"
+            />
+          );
         })}
       </main>
     </div>

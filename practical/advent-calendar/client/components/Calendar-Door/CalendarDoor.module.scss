@@ -1,33 +1,55 @@
 .calendar-door {
   position: relative;
   border: dashed rgba(255, 255, 255, 0.34) 2px;
-  width: 20%;
+  width: calc(20% + 2px);
   padding-bottom: 20%;
 
   //   3d door
   perspective: 1000px;
   transform-style: preserve-3d;
-
-  &:hover .front-door {
-    transform: rotateY(-180deg);
-  }
 }
 
 .front-door {
   position: absolute;
   inset: 0;
-  background-color: rgb(47, 47, 47);
+  // background-color: rgb(47, 47, 47);
+  background-image: url("/wrapping_paper.jpg");
   display: flex;
   justify-content: center;
+  z-index: 1;
+  cursor: pointer;
 
-  &__text {
-    align-self: center;
-    transform-style: preserve-3d;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #421a22;
+    transform-origin: center;
+    transform: rotateY(-180deg);
     backface-visibility: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
   }
 
   //   3d door
   transform-origin: left center;
   transform: rotateY(0deg);
   transition: transform 0.3s ease;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+
+  &--open {
+    transform: rotateY(-180deg);
+  }
+
+  &__text {
+    align-self: center;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+}
+
+.image {
+  position: absolute;
+  inset: 0;
 }

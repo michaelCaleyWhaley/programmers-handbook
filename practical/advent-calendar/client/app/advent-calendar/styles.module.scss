@@ -1,4 +1,13 @@
-.advent-calendar {
-    color: black;
-    @apply items-center flex px-5 py-1 bg-white border border-black gap-1 rounded
+.main {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.row {
+  &__item {
+    flex-shrink: 0;
+  }
 }
