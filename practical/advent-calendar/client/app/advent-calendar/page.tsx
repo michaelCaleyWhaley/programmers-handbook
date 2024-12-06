@@ -19,7 +19,7 @@ export default function AdventCalendar() {
         snowflakeCount={100}
       />
       <main className={styles["main"]}>
-        {new Array(25).fill(1).map((_, index) => {
+        {new Array(24).fill(1).map((_, index) => {
           const key = `door-${index.toString()}`;
           return (
             <CalendarDoor
