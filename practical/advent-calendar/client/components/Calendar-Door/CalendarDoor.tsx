@@ -32,7 +32,12 @@ export function CalendarDoor({ number, className = "", image }: Props) {
           alt=""
           width={200}
           height={200}
-          style={{ position: "absolute", inset: 0 }}
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+          }}
           loading="eager"
           priority
         />
