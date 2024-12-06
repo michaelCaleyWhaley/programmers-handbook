@@ -28,7 +28,7 @@ export function CalendarDoor({ number, className = "", image }: Props) {
       {image && (
         <Image
           className={styles[image]}
-          src={image}
+          src="/james_m.jpeg"
           alt=""
           width={200}
           height={200}
