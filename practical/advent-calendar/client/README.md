@@ -13,3 +13,5 @@ https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth
 * config for oauth local and deployed
 * display user details on website
 * only return elapsed days doors after auth
+
+https://dzbi4xekp5t97.cloudfront.net/
