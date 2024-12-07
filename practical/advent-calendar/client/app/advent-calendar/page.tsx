@@ -6,6 +6,8 @@ import Snowfall from "react-snowfall";
 import styles from "./styles.module.scss";
 import { useVerifiedUser } from "../hooks/use-verified-user";
 import Image from "next/image";
+import { IMAGES } from "@/constants/images";
+import { shuffleArray } from "../helpers/shuffle-array";
 
 export default function AdventCalendar() {
   const userData = useVerifiedUser();
@@ -31,24 +33,30 @@ export default function AdventCalendar() {
               width={200}
               height={200}
               src={userData.avatar_url}
-              alt=""
+              alt="Avatar"
             />
           )}
           {userData?.login && <h1>{userData.login}</h1>}
         </div>
 
         <div className={styles["calendar"]}>
-          {new Array(24).fill(1).map((_, index) => {
-            const key = `door-${index.toString()}`;
-            return (
-              <CalendarDoor
-                className={styles["row__item"]}
-                key={key}
-                number={index + 1}
-                image="/santa_island.webp"
-              />
-            );
-          })}
+          {shuffleArray(
+            new Array(24).fill(1).map((_, index) => {
+              const key = `door-${index.toString()}`;
+              return (
+                <CalendarDoor
+                  className={styles["row__item"]}
+                  key={key}
+                  number={index + 1}
+                  image={
+                    IMAGES[index] ??
+                    `https://cataas.com/cat?${index.toString()}`
+                  }
+                />
+              );
+              // eslint-disable-next-line prettier/prettier
+            })
+          )}
         </div>
       </main>
     </div>

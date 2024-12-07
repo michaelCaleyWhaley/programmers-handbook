@@ -3,6 +3,7 @@ import classNames from "classnames";
 import styles from "./CalendarDoor.module.scss";
 import Image from "next/image";
 import { useState } from "react";
+import { isValidDate } from "@/app/helpers/is-valid-date/is-valid-date";
 
 type Props = { number: number; className?: string; image?: string };
 
@@ -20,7 +21,12 @@ export function CalendarDoor({ number, className = "", image }: Props) {
           [styles["front-door--open"]]: isOpen,
         })}
         onClick={() => {
-          setIsOpen(!isOpen);
+          if (isValidDate(number)) {
+            setIsOpen(!isOpen);
+            return;
+          }
+
+          alert("Ho ho ho, wait yer turn.");
         }}
       >
         <p className={styles["front-door__text"]}>{number}</p>

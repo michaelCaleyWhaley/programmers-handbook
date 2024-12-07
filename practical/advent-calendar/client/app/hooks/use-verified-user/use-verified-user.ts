@@ -15,8 +15,6 @@ export function useVerifiedUser() {
     }
 
     const parsedJon = JSON.parse(userCookie) as unknown as userDataType;
-    console.log("parsedJon: ", parsedJon);
-
     setUserData(parsedJon);
   }, []);
 

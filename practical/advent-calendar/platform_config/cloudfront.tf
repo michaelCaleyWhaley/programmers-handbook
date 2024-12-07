@@ -133,6 +133,6 @@ resource "aws_cloudfront_origin_request_policy" "advent_calendar_origin_request_
     header_behavior = "none"
   }
   query_strings_config {
-    query_string_behavior = "none"
+    query_string_behavior = "all"
   }
 }

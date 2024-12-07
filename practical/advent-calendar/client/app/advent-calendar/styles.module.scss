@@ -1,10 +1,23 @@
 .user {
-  display: flex;
+  display: block;
+
+  @apply mb-8;
+
+  @apply md:flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 
-  @apply mb-8;
+  h1,
+  img {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      margin: 0;
+    }
+  }
 }
 
 .calendar {
