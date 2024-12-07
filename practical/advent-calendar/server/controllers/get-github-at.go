@@ -6,6 +6,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"io"
+	"log"
 	"net/http"
 	"net/url"
 	"os"
@@ -15,6 +16,8 @@ import (
 
 func GetGhAccessToken(c *gin.Context) {
 	code := c.Query("code")
+	log.Println("code: ", code)
+
 	if len(code) == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"message": "No access code.",
