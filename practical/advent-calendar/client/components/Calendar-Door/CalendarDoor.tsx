@@ -3,7 +3,7 @@ import classNames from "classnames";
 import styles from "./CalendarDoor.module.scss";
 import Image from "next/image";
 import { useState } from "react";
-import { isValidDate } from "@/app/helpers/is-valid-date/is-valid-date";
+import { isValidDate } from "@/app/helpers/is-valid-date";
 
 type Props = { number: number; className?: string; image?: string };
 

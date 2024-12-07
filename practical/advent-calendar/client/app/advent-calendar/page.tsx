@@ -40,23 +40,24 @@ export default function AdventCalendar() {
         </div>
 
         <div className={styles["calendar"]}>
-          {shuffleArray(
-            new Array(24).fill(1).map((_, index) => {
-              const key = `door-${index.toString()}`;
-              return (
-                <CalendarDoor
-                  className={styles["row__item"]}
-                  key={key}
-                  number={index + 1}
-                  image={
-                    IMAGES[index] ??
-                    `https://cataas.com/cat?${index.toString()}`
-                  }
-                />
-              );
-              // eslint-disable-next-line prettier/prettier
-            })
-          )}
+          {userData &&
+            shuffleArray(
+              new Array(24).fill(1).map((_, index) => {
+                const key = `door-${index.toString()}`;
+                return (
+                  <CalendarDoor
+                    className={styles["row__item"]}
+                    key={key}
+                    number={index + 1}
+                    image={
+                      IMAGES[index] ??
+                      `https://cataas.com/cat?${index.toString()}`
+                    }
+                  />
+                );
+                // eslint-disable-next-line prettier/prettier
+              })
+            )}
         </div>
       </main>
     </div>

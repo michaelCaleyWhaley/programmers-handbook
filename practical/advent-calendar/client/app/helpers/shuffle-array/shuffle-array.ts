@@ -6,4 +6,6 @@ export function shuffleArray(array: ReactNode[]) {
     [array[i], array[j]] = [array[j], array[i]]; // Swap elements
   }
   return array;
+
+  return array;
 }
