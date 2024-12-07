@@ -21,6 +21,8 @@ func routes(r *gin.Engine) {
 	r.Use(middleware.CrossOrigin)
 	r.GET("/api/test", controllers.TestController)
 	r.GET("/api/gh-oauth", controllers.GetGhAccessToken)
+
+	r.POST("/api/gh-user", middleware.VerifyGhAccessToken, controllers.GetGithubUser)
 }
 
 func init() {

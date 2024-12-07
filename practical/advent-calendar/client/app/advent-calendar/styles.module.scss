@@ -1,9 +1,20 @@
-.main {
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  @apply mb-8;
+}
+
+.calendar {
   display: flex;
   width: 100%;
+  max-width: 800px;
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .row {

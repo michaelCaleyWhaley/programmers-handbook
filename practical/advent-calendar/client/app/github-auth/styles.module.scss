@@ -1,4 +1,12 @@
-.github-sign-in {
-    color: black;
-    @apply items-center flex px-5 py-1 bg-white border border-black gap-1 rounded
+.github-auth {
+  color: white;
+}
+
+.loading-wheel {
+  position: absolute;
+  inset: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  max-width: 150px;
+  height: auto;
 }
