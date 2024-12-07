@@ -19,8 +19,8 @@ var isLocal = os.Args[len(os.Args)-1] == "--local"
 
 func routes(r *gin.Engine) {
 	r.Use(middleware.CrossOrigin)
-	r.GET("/test", controllers.TestController)
-	r.GET("/gh-oauth", controllers.GetGhAccessToken)
+	r.GET("/api/test", controllers.TestController)
+	r.GET("/api/gh-oauth", controllers.GetGhAccessToken)
 }
 
 func init() {
