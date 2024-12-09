@@ -22,22 +22,22 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 
 
-#   origin {
-#     domain_name = "${aws_api_gateway_rest_api.advent_calendar_handler_api_gateway.id}.execute-api.${local.region}.amazonaws.com"
-#     origin_id   = local.api_origin_id
-#     origin_path = "/deployed"
+  origin {
+    domain_name = "${aws_api_gateway_rest_api.advent_calendar_handler_api_gateway.id}.execute-api.${local.region}.amazonaws.com"
+    origin_id   = local.api_origin_id
+    origin_path = "/deployed"
 
-#     custom_origin_config {
-#       http_port                = 80
-#       https_port               = 443
-#       origin_keepalive_timeout = 5
-#       origin_protocol_policy   = "https-only"
-#       origin_read_timeout      = 30
-#       origin_ssl_protocols = [
-#         "TLSv1.2",
-#       ]
-#     }
-#   }
+    custom_origin_config {
+      http_port                = 80
+      https_port               = 443
+      origin_keepalive_timeout = 5
+      origin_protocol_policy   = "https-only"
+      origin_read_timeout      = 30
+      origin_ssl_protocols = [
+        "TLSv1.2",
+      ]
+    }
+  }
 
 
 
@@ -69,48 +69,48 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     max_ttl                = 86400
   }
 
-#   ordered_cache_behavior {
-#     allowed_methods = [
-#       "DELETE",
-#       "GET",
-#       "HEAD",
-#       "OPTIONS",
-#       "PATCH",
-#       "POST",
-#       "PUT",
-#     ]
-#     cache_policy_id          = "4135ea2d-6df8-44a3-9df3-4b5a84be39ad"
-#     origin_request_policy_id = aws_cloudfront_origin_request_policy.advent_calendar_origin_request_policy.id
-#     cached_methods = [
-#       "GET",
-#       "HEAD",
-#     ]
-#     path_pattern           = "/api/*"
-#     target_origin_id       = local.api_origin_id
-#     viewer_protocol_policy = "redirect-to-https"
+  ordered_cache_behavior {
+    allowed_methods = [
+      "DELETE",
+      "GET",
+      "HEAD",
+      "OPTIONS",
+      "PATCH",
+      "POST",
+      "PUT",
+    ]
+    cache_policy_id          = "4135ea2d-6df8-44a3-9df3-4b5a84be39ad"
+    origin_request_policy_id = aws_cloudfront_origin_request_policy.advent_calendar_origin_request_policy.id
+    cached_methods = [
+      "GET",
+      "HEAD",
+    ]
+    path_pattern           = "/api/*"
+    target_origin_id       = local.api_origin_id
+    viewer_protocol_policy = "redirect-to-https"
 
-#   }
+  }
 
-#   ordered_cache_behavior {
-#     allowed_methods = [
-#       "DELETE",
-#       "GET",
-#       "HEAD",
-#       "OPTIONS",
-#       "PATCH",
-#       "POST",
-#       "PUT",
-#     ]
-#     cache_policy_id          = "4135ea2d-6df8-44a3-9df3-4b5a84be39ad"
-#     origin_request_policy_id = aws_cloudfront_origin_request_policy.advent_calendar_origin_request_policy.id
-#     cached_methods = [
-#       "GET",
-#       "HEAD",
-#     ]
-#     path_pattern           = "/api"
-#     target_origin_id       = local.api_origin_id
-#     viewer_protocol_policy = "redirect-to-https"
-#   }
+  ordered_cache_behavior {
+    allowed_methods = [
+      "DELETE",
+      "GET",
+      "HEAD",
+      "OPTIONS",
+      "PATCH",
+      "POST",
+      "PUT",
+    ]
+    cache_policy_id          = "4135ea2d-6df8-44a3-9df3-4b5a84be39ad"
+    origin_request_policy_id = aws_cloudfront_origin_request_policy.advent_calendar_origin_request_policy.id
+    cached_methods = [
+      "GET",
+      "HEAD",
+    ]
+    path_pattern           = "/api"
+    target_origin_id       = local.api_origin_id
+    viewer_protocol_policy = "redirect-to-https"
+  }
 
   price_class = "PriceClass_100"
 
@@ -133,6 +133,6 @@ resource "aws_cloudfront_origin_request_policy" "advent_calendar_origin_request_
     header_behavior = "none"
   }
   query_strings_config {
-    query_string_behavior = "none"
+    query_string_behavior = "all"
   }
 }

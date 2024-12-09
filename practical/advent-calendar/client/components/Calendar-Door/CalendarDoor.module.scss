@@ -1,12 +1,17 @@
 .calendar-door {
   position: relative;
   border: dashed rgba(255, 255, 255, 0.34) 2px;
-  width: calc(20% + 2px);
-  padding-bottom: 20%;
+  width: calc(35% + 2px);
+  padding-bottom: 35%;
 
   //   3d door
   perspective: 1000px;
   transform-style: preserve-3d;
+
+  @media (min-width: 768px) {
+    width: calc(20% + 2px);
+    padding-bottom: 20%;
+  }
 }
 
 .front-door {
