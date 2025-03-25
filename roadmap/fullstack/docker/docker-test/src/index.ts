@@ -2,6 +2,10 @@ import fastify from 'fastify';
 
 const server = fastify();
 
+server.get('/', async (): Promise<string> => {
+  return 'working\n';
+});
+
 server.get('/ping', async (): Promise<string> => {
   return 'pong\n';
 });
