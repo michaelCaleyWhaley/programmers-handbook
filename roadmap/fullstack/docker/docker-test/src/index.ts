@@ -6,7 +6,7 @@ server.get('/ping', async (): Promise<string> => {
   return 'pong\n';
 });
 
-server.listen({ port: 8080 }, (err, address): void => {
+server.listen({ port: 3000, host: '0.0.0.0' }, (err, address): void => {
   if (err) {
     console.error(err);
     process.exit(1);

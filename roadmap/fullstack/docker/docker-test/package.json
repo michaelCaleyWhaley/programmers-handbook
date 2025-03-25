@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "docker-build": "docker build -t docker-test .",
+    "docker-run": "docker run -p 3000:3000 docker-test",
     "build": "tsc -p tsconfig.json",
     "dev": "nodemon --watch  'src/**/*' --exec 'ts-node' src/index.ts",
     "start": "npm run build && node dist/index.js",
