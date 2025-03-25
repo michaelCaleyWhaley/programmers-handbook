@@ -4,7 +4,4 @@
 
 
 
-docker tag docker-test:latest dockertestregistery.azurecr.io/docker-test:latest
-docker push dockertestregistery.azurecr.io/docker-test:latest
-
-https://medium.com/@MSufiyanGhori/how-to-use-azure-to-deploy-your-web-app-container-for-free-e11986bc3374
+https://learn.microsoft.com/en-us/azure/container-instances/container-instances-tutorial-prepare-app
