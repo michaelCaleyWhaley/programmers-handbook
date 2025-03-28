@@ -24,6 +24,6 @@ http://localhost/tutorial/updating-our-app/
 
 ## Architecture
 
-Building images sometimes requires different architecture i.e. amd64 (x86__x64) or arm64.
+Building images sometimes requires different architecture i.e. amd64 (x86__x64) or arm64. For example Azure container apps only allows amd64 at present.
 
 To build an image for a different architecture pass the `platform` flag with arguement `linux/amd64` (or whatever platform you're targetting). i.e. `--platform=linux/amd64`.
