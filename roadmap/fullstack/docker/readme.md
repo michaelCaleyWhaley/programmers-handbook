@@ -21,3 +21,9 @@
 
 docker run -d -p 80:80 docker/getting-started
 http://localhost/tutorial/updating-our-app/
+
+## Architecture
+
+Building images sometimes requires different architecture i.e. amd64 (x86__x64) or arm64.
+
+To build an image for a different architecture pass the `platform` flag with arguement `linux/amd64` (or whatever platform you're targetting). i.e. `--platform=linux/amd64`.
