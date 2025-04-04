@@ -14,8 +14,6 @@ Ensure that Jenkinsfile is spelt with an uppercase J. The default configuration 
 
 You can specify a different path and file name in the Jenkins settings.
 
-## Running multiple steps
-
 [Running multiple steps](https://www.jenkins.io/doc/pipeline/tour/running-multiple-steps)
 
 
@@ -23,4 +21,4 @@ You can specify a different path and file name in the Jenkins settings.
 
 [] Trigger jenkins builds on push
 [] Name prs after branch
-
+[] show build on github
