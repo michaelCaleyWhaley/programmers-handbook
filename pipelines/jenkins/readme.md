@@ -18,3 +18,9 @@ You can specify a different path and file name in the Jenkins settings.
 
 [Running multiple steps](https://www.jenkins.io/doc/pipeline/tour/running-multiple-steps)
 
+
+
+
+[] Trigger jenkins builds on push
+[] Name prs after branch
+
