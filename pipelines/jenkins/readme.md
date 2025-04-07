@@ -2,6 +2,11 @@
 
 [Jenkins getting started](https://www.jenkins.io/doc/pipeline/tour/getting-started)
 
+Adapted steps from above getting started.
+1. Run this command to download and start Jenkins `[ -f jenkins.war ] || curl -O https://ftp.belnet.be/mirror/jenkins/war-stable/2.492.3/jenkins.war --output-dir ./; java -jar jenkins.war --httpPort=8080`.
+2. Start Docker locally in the case Jenkins pipelines use Docker.
+3. Use nGrok to expose local Jenkins to web for webhook testing `ngrok http http://localhost:8080`.
+
 ## Running Jenkins locally
 
 After starting Jenkins using the instructions on the above link. Ensure the correct plugins are installed. When using Docker, `Docker plugin` and `Docker pipeline` are both necessary.
