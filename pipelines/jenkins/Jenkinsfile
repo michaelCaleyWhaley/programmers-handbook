@@ -6,6 +6,38 @@ pipeline {
         stage('build') {
             steps {
                 sh 'go version'
+
+                retry(3) { sh 'go env' }
+            }
+        }
+
+        stage('test') {
+            steps {
+                timeout(time: 3, unit: 'MINUTES') { sh 'pwd' }
+            }
+        }
+    }
+
+    // post allows you to perform actions after the pipeline has completed.
+    post {
+        always {
+            script {
+                echo 'This will always run'
+            }
+        }
+        success {
+            script {
+                echo 'This will only run on success'
+            }
+        }
+        failure {
+            script {
+                echo 'This will only run on failure'
+            }
+        }
+        unstable {
+            script {
+                echo 'This will only run if the build is unstable'
             }
         }
     }
