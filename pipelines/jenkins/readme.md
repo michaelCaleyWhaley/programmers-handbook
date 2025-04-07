@@ -25,9 +25,13 @@ You can specify a different path and file name in the Jenkins settings.
 
 To trigger Jenkins using a webhook first we need to identify the pipeline type. For my use case this type is `multi branch pipeline`.
 
-The first step is to install the [plugin Multibranch Scan Webhook Trigger](https://plugins.jenkins.io/multibranch-scan-webhook-trigger).
+The first step is to install the [plugin Multibranch Scan Webhook Trigger](https://plugins.jenkins.io/multibranch-scan-webhook-trigger). After this go to pipeline config and search for scan by webhook. The next steps should be self explanatory.
+
+## Pipeline sources
+
+The goal in my case is to show only main and open pull requests in Jenkins multi branch. To achieve this I have used two sources both set to Github. One which targets only PRs and one which targets all branches but filters for main.
 
 
-[] Trigger jenkins builds on push
+
 [] Name prs after branch
 [] show build on github
