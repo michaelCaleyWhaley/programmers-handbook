@@ -21,7 +21,11 @@ You can specify a different path and file name in the Jenkins settings.
 
 [Running multiple steps](https://www.jenkins.io/doc/pipeline/tour/running-multiple-steps)
 
+## Webhooks
 
+To trigger Jenkins using a webhook first we need to identify the pipeline type. For my use case this type is `multi branch pipeline`.
+
+The first step is to install the [plugin Multibranch Scan Webhook Trigger](https://plugins.jenkins.io/multibranch-scan-webhook-trigger).
 
 
 [] Trigger jenkins builds on push
