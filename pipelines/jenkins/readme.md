@@ -6,6 +6,8 @@ Adapted steps from above getting started.
 1. Run this command to download and start Jenkins `[ -f jenkins.war ] || curl -O https://ftp.belnet.be/mirror/jenkins/war-stable/2.492.3/jenkins.war --output-dir ./; java -jar jenkins.war --httpPort=8080`.
 2. Start Docker locally in the case Jenkins pipelines use Docker.
 3. Use nGrok to expose local Jenkins to web for webhook testing `ngrok http http://localhost:8080`.
+4. Go to Github webhooks and update with ngroks url [Github webhook](https://github.com/michaelCaleyWhaley/programmers-handbook/settings/hooks/539706905).
+5. Local login details `user: admin`, `password: admin`.
 
 ## Running Jenkins locally
 
@@ -32,6 +34,4 @@ The first step is to install the [plugin Multibranch Scan Webhook Trigger](https
 The goal in my case is to show only main and open pull requests in Jenkins multi branch. To achieve this I have used two sources both set to Github. One which targets only PRs and one which targets all branches but filters for main.
 
 
-
-[] Name prs after branch
 [] show build on github
