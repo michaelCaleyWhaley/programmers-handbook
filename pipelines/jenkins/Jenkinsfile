@@ -45,6 +45,7 @@ pipeline {
             script {
                 // Notify GitHub status: failure
                 githubNotify context: 'build', status: 'FAILURE', description: 'Build failed'
+
                 echo 'This will only run on failure'
             }
         }
