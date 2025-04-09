@@ -33,5 +33,6 @@ The first step is to install the [plugin Multibranch Scan Webhook Trigger](https
 
 The goal in my case is to show only main and open pull requests in Jenkins multi branch. To achieve this I have used two sources both set to Github. One which targets only PRs and one which targets all branches but filters for main.
 
+## Github status updates
 
-[] show build on github
+Configured using the [Github checks plugin](https://plugins.jenkins.io/github-checks).

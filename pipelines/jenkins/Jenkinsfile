@@ -6,7 +6,8 @@ pipeline {
         stage('start pipeline notification') {
             steps {
                 // Notify GitHub status: pending
-                githubNotify context: 'build', status: 'PENDING', description: 'Build started'
+                // githubNotify context: 'build', status: 'PENDING', description: 'Build started'
+                githubNotify context: 'ci/jenkins', status: 'PENDING', description: 'Build started'
             }
         }
 
@@ -36,7 +37,8 @@ pipeline {
             script {
                 script {
                     // Notify GitHub status: success
-                    githubNotify context: 'build', status: 'SUCCESS', description: 'Build successful'
+                    // githubNotify context: 'build', status: 'SUCCESS', description: 'Build successful'
+                    githubNotify context: 'ci/jenkins', status: 'SUCCESS', description: 'Build successful'
                 }
                 echo 'This will only run on success'
             }
@@ -44,7 +46,8 @@ pipeline {
         failure {
             script {
                 // Notify GitHub status: failure
-                githubNotify context: 'build', status: 'FAILURE', description: 'Build failed'
+                // githubNotify context: 'build', status: 'FAILURE', description: 'Build failed'
+                githubNotify context: 'ci/jenkins', status: 'FAILURE', description: 'Build failed'
 
                 echo 'This will only run on failure'
             }
