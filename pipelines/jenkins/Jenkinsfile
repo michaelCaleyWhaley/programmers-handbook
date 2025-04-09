@@ -3,11 +3,12 @@
 pipeline {
     agent { docker { image 'golang:1.24.2-alpine3.21' } }
     stages {
-        stage('start pipeline notification') {
+        stage('Notify GitHub - Pending') {
+            agent none // Don't run this in docker
             steps {
-                // Notify GitHub status: pending
-                // githubNotify context: 'build', status: 'PENDING', description: 'Build started'
-                githubNotify context: 'ci/jenkins', status: 'PENDING', description: 'Build started'
+                script {
+                    githubNotify context: 'ci/jenkins', status: 'PENDING', description: 'Build started'
+                }
             }
         }
 
@@ -24,6 +25,15 @@ pipeline {
                 timeout(time: 3, unit: 'MINUTES') { sh 'pwd' }
             }
         }
+
+        stage('Notify GitHub - Success') {
+            agent none
+            steps {
+                script {
+                    githubNotify context: 'ci/jenkins', status: 'SUCCESS', description: 'Build succeeded'
+                }
+            }
+        }
     }
 
     // post allows you to perform actions after the pipeline has completed.
@@ -35,20 +45,11 @@ pipeline {
         }
         success {
             script {
-                script {
-                    // Notify GitHub status: success
-                    // githubNotify context: 'build', status: 'SUCCESS', description: 'Build successful'
-                    githubNotify context: 'ci/jenkins', status: 'SUCCESS', description: 'Build successful'
-                }
                 echo 'This will only run on success'
             }
         }
         failure {
             script {
-                // Notify GitHub status: failure
-                // githubNotify context: 'build', status: 'FAILURE', description: 'Build failed'
-                githubNotify context: 'ci/jenkins', status: 'FAILURE', description: 'Build failed'
-
                 echo 'This will only run on failure'
             }
         }
