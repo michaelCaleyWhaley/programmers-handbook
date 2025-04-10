@@ -1,7 +1,7 @@
 /* Requires the Docker Pipeline plugin */
 
 pipeline {
-    agent { docker { image 'golang:1.24.2-alpine3.21' } }
+    // agent { docker { image 'golang:1.24.2-alpine3.21' } }
     stages {
         stage('Notify GitHub - Pending') {
             agent none // Don't run this in docker
@@ -12,28 +12,28 @@ pipeline {
             }
         }
 
-        stage('build') {
-            steps {
-                sh 'go version'
+        // stage('build') {
+        //     steps {
+        //         sh 'go version'
 
-                retry(3) { sh 'go env' }
-            }
-        }
+        //         retry(3) { sh 'go env' }
+        //     }
+        // }
 
-        stage('test') {
-            steps {
-                timeout(time: 3, unit: 'MINUTES') { sh 'pwd' }
-            }
-        }
+        // stage('test') {
+        //     steps {
+        //         timeout(time: 3, unit: 'MINUTES') { sh 'pwd' }
+        //     }
+        // }
 
-        stage('Notify GitHub - Success') {
-            agent none
-            steps {
-                script {
-                    githubNotify context: 'ci/jenkins', status: 'SUCCESS', description: 'Build succeeded'
-                }
-            }
-        }
+        // stage('Notify GitHub - Success') {
+        //     agent none
+        //     steps {
+        //         script {
+        //             githubNotify context: 'ci/jenkins', status: 'SUCCESS', description: 'Build succeeded'
+        //         }
+        //     }
+        // }
     }
 
     // post allows you to perform actions after the pipeline has completed.
