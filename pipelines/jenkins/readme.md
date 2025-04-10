@@ -39,3 +39,6 @@ Configured using the [Github checks plugin](https://plugins.jenkins.io/github-ch
 
 In order the plugin to work Github needs to add your Jenkins instance as an authenticated app. To achieve this follow the steps on this [link](https://github.com/jenkinsci/github-branch-source-plugin/blob/master/docs/github-app.adoc).
 
+
+
+
