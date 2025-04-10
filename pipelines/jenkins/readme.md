@@ -38,6 +38,3 @@ The goal in my case is to show only main and open pull requests in Jenkins multi
 Configured using the [Github checks plugin](https://plugins.jenkins.io/github-checks).
 
 In order the plugin to work Github needs to add your Jenkins instance as an authenticated app. To achieve this follow the steps on this [link](https://github.com/jenkinsci/github-branch-source-plugin/blob/master/docs/github-app.adoc).
-
-
-openssl pkcs8 -topk8 -inform PEM -outform PEM -in jenkins-caley.2025-04-10.private-key.pem -out converted-github-app.pem -nocrypt
