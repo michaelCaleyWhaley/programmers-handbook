@@ -13,7 +13,9 @@ pipeline {
         stage('test') {
             steps {
                 timeout(time: 3, unit: 'MINUTES') { sh 'pwd' }
-                throw new Exception("Throw to stop pipeline")
+
+                // Test github blocking failed pipelines
+                // throw new Exception("Throw to stop pipeline")
             }
         }
     }
