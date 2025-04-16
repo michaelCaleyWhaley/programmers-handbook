@@ -13,7 +13,7 @@ pipeline {
         stage('test') {
             steps {
                 timeout(time: 3, unit: 'MINUTES') { sh 'pwd' }
-                throw new Exception("Throw to stop pipeline")
+                // throw new Exception("Throw to stop pipeline")
             }
         }
     }
