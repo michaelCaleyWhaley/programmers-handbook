@@ -38,3 +38,9 @@ The goal in my case is to show only main and open pull requests in Jenkins multi
 Configured using the [Github checks plugin](https://plugins.jenkins.io/github-checks).
 
 In order the plugin to work Github needs to add your Jenkins instance as an authenticated app. To achieve this follow the steps on this [link](https://github.com/jenkinsci/github-branch-source-plugin/blob/master/docs/github-app.adoc).
+
+### Block PRs on Github with Jenkins
+
+In order for pull requests into main|master to be blocked by Jenkins builds you must go into the settings of the default branch on Github. Create a ruleset and check `Require status checks to pass`.
+
+You will then need to add the name of the status check which you want to be required. A list of the options should be on the PR itself under all checks. In this case the name is `continuous-integration/jenkins/pr-head`.
