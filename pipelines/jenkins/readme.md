@@ -41,4 +41,4 @@ In order the plugin to work Github needs to add your Jenkins instance as an auth
 
 
 
-
+- get github status updates working
