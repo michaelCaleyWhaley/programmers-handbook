@@ -13,7 +13,3 @@ Provides a simple solution to automate repetitive setup tasks. You may write a s
 
 ### Overriding individual options
 You can override options but prepending `ANSIBLE_` and uppercasing the name of the option when you run Ansible. I.e. to override just the `gathering=implicit` option `ANSIBLE_GATHERING=explicit`.
-
-
-
-Blocked at setting up multiple git identities so I can push these notes to git
