@@ -11,7 +11,7 @@ https://www.youtube.com/watch?v=s_o8dwzRlu4
 ## Deploying simple app
 
 ### Config kind
-Different types of config are demarked by the property kind. Examples of different kind include `ConfigMap`, `Secret` and `Deployment`.
+Different types of config are demarked by the property kind. Examples of different kind include `ConfigMap`, `Secret`, `Deployment` and `Service`.
 
 ### Deployment
 More complex than other kind.

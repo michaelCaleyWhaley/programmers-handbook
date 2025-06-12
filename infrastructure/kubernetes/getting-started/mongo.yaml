@@ -22,3 +22,17 @@ spec:
         ports:
         - containerPort: 27017
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-service
+spec:
+  selector:
+    # Uses this selector to determine which app 
+    app: mongo
+  ports:
+    - protocol: TCP
+      # port does not have to match target port. But common standard to keep simple.
+      port: 27017
+      # Should match the pod port so that service forwards request to app
+      targetPort: 27017
