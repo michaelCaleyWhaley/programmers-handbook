@@ -2,8 +2,8 @@ import { render, screen } from "@testing-library/react";
 import App from "./App";
 
 for (let i = 0; i < 2000; i++) {
-  describe("adds 1 + 2 to equal 3", () => {
-    it("should", () => {
+  describe("Mount and unmount component", () => {
+    it("should render and unmount correctly", () => {
       const { unmount } = render(<App />);
       const ele = screen.getByText(
         "Click on the Vite and React logos to learn more"
