@@ -1,0 +1,50 @@
+{
+  "name": "enzyme",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "16.0.0",
+    "react-dom": "16.0.0",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "test": "jest"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.3",
+    "@babel/preset-env": "^7.28.3",
+    "@jest/globals": "^30.1.2",
+    "babel-jest": "^30.1.2",
+    "cheerio": "0.22.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.8",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.5.1",
+    "jest-transform-stub": "^2.0.0",
+    "worker-mock": "^0.0.3"
+  },
+  "overrides": {
+    "cheerio": "0.22.0"
+  }
+}
